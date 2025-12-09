@@ -2,9 +2,9 @@
 
 ---
 
-# 📌 **README.md**
+📌 **README.md**
 
-```md
+
 # 📊 Salary Prediction Using Machine Learning
 
 This project predicts the salary of an individual based on features like experience, test score, and interview score using a trained Machine Learning model.  
@@ -21,38 +21,16 @@ The project includes a Flask web app where users can input values and get real-t
 
 ---
 
-## 📂 Project Structure
 
-```
 
-salary-prediction/
-│
-├── app.py                     # Flask web application
-├── requirements.txt           # Project dependencies
-├── salary_data_large.csv      # Training dataset (optional)
-├── best_salary_model.pkl      # Optimized ML model
-├── salary_pipeline.pkl        # Data preprocessing pipeline
-├── salary_Prediction.ipynb    # Jupyter notebook (EDA + Training)
-│
-├── templates/
-│   ├── index.html             # Input form UI
-│   └── result.html            # Prediction results UI
-│
-└── model/
-└── encoder.pkl            # Encoder (if used)
+🛠️ **How to Run the Project Locally**
 
-````
+ 1️⃣ **Create a Virtual Environment**
 
----
-
-## 🛠️ **How to Run the Project Locally**
-
-### 1️⃣ **Create a Virtual Environment**
-```sh
 python -m venv env
-````
 
-### 2️⃣ **Activate the Virtual Environment**
+
+2️⃣ **Activate the Virtual Environment**
 
 **Windows:**
 
@@ -60,13 +38,13 @@ python -m venv env
 env\Scripts\activate
 ```
 
-### 3️⃣ **Install Dependencies**
+3️⃣ **Install Dependencies**
 
 ```sh
 pip install -r requirements.txt
 ```
 
-### 4️⃣ **Run the Flask App**
+ 4️⃣ **Run the Flask App**
 
 ```sh
 python app.py
@@ -80,7 +58,7 @@ http://127.0.0.1:5000/
 
 ---
 
-## 🧠 **Model Training Workflow**
+ 🧠 **Model Training Workflow**
 
 1. Data loaded from CSV
 2. Preprocessing & scaling applied
@@ -90,21 +68,21 @@ http://127.0.0.1:5000/
 
 ---
 
-## 🌐 **Web Interface Example**
+ 🌐 **Web Interface Example**
 
-### User enters:
+User enters:
 
 * Experience
 * Test Score
 * Interview Score
 
-### App returns:
+ App returns:
 
 🎯 **Predicted Salary**
 
 ---
 
-## 📦 Requirements
+📦 Requirements
 
 You can install everything using:
 
@@ -139,9 +117,9 @@ This project is open-source and free to use.
 **Dhanush Kumar**
 GitHub: [https://github.com/DhanushKumar-3](https://github.com/DhanushKumar-3)
 
-```
 
----
+
+
 
 If you want, I can also create:
 
@@ -151,4 +129,4 @@ If you want, I can also create:
 ✅ Model explanation diagram  
 
 Just tell me **“add banner”** or **“add screenshots section”**.
-```
+

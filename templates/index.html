@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Prediction</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f2f7; /* Apple grey */
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial;
+        }
+
+        .container {
+            width: 430px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow:
+                0 20px 40px rgba(0,0,0,0.08),
+                0 4px 10px rgba(0,0,0,0.04);
+            animation: fadeUp 0.5s ease;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 28px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1c1c1e;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #3a3a3c;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            font-size: 16px;
+            background: #f2f2f7;
+            border: none;
+            border-radius: 12px;
+            outline: none;
+            color: #1c1c1e;
+            transition: 0.25s;
+            appearance: none;
+        }
+
+        input:focus, select:focus {
+            background: #e5e5ea;
+            transform: scale(1.02);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            background: #007AFF; /* Apple blue */
+            color: white;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            background: #005fce;
+            transform: scale(1.03);
+        }
+
+        .error-box {
+            background: #fff1f0;
+            border-left: 4px solid #ff3b30;
+            color: #c00;
+            padding: 10px 14px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Salary Prediction</h2>
+
+    {% if error %}
+    <div class="error-box">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <form action="/predict" method="POST">
+
+        <label>Experience (Years)</label>
+        <input type="number"
+               name="experience"
+               value="{{ request.form.experience }}"
+               min="1"
+               required>
+
+        <label>Job Role</label>
+        <select name="job_role" required>
+            <option {% if request.form.job_role=='Software Engineer' %}selected{% endif %}>Software Engineer</option>
+            <option {% if request.form.job_role=='Data Scientist' %}selected{% endif %}>Data Scientist</option>
+            <option {% if request.form.job_role=='Machine Learning Engineer' %}selected{% endif %}>Machine Learning Engineer</option>
+            <option {% if request.form.job_role=='UI/UX Designer' %}selected{% endif %}>UI/UX Designer</option>
+            <option {% if request.form.job_role=='Web Developer' %}selected{% endif %}>Web Developer</option>
+            <option {% if request.form.job_role=='Backend Developer' %}selected{% endif %}>Backend Developer</option>
+        </select>
+
+        <label>Location</label>
+        <select name="location" required>
+            <option {% if request.form.location=='Bangalore' %}selected{% endif %}>Bangalore</option>
+            <option {% if request.form.location=='Hyderabad' %}selected{% endif %}>Hyderabad</option>
+            <option {% if request.form.location=='Chennai' %}selected{% endif %}>Chennai</option>
+            <option {% if request.form.location=='Mumbai' %}selected{% endif %}>Mumbai</option>
+            <option {% if request.form.location=='Delhi' %}selected{% endif %}>Delhi</option>
+            <option {% if request.form.location=='Pune' %}selected{% endif %}>Pune</option>
+        </select>
+
+        <button type="submit">Predict Salary</button>
+    </form>
+
+</div>
+
+</body>
+</html>
